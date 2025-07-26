@@ -3,36 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quit Smoking – Make It Invisible</title>
+  <title>Quit Smoking – 4 Step Guide</title>
   <style>
-    /* Page setup */
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1a1a1a, #333);
+      background: #1a1a1a;
       color: #fff;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    /* Sticky navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #222;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      z-index: 100;
+    }
+    nav a {
+      color: #ffcc66;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* Section styles */
+    section {
+      padding: 50px 20px;
       text-align: center;
     }
-
-    /* Main heading */
     h1 {
-      margin-top: 25px;
+      margin-top: 20px;
       font-size: 2.2rem;
-      color: #ffcc66;
-      text-shadow: 0 0 10px rgba(255,204,102,0.6);
     }
-
-    /* Intro text */
     p.intro {
-      max-width: 600px;
-      margin: 10px auto 30px;
+      max-width: 650px;
+      margin: 15px auto 40px;
       font-size: 1rem;
       color: #ddd;
       line-height: 1.4rem;
     }
+    h2 {
+      margin-bottom: 15px;
+    }
 
-    /* Container for tips */
+    /* Grid for tips */
     .grid {
       display: flex;
       justify-content: center;
@@ -40,97 +64,176 @@
       flex-wrap: wrap;
       padding: 20px;
     }
-
-    /* Each tip card */
     .icon-card {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 10px;
       padding: 15px;
-      width: 150px;
+      width: 160px;
       text-align: center;
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-    /* Hover effect */
-    .icon-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(255,204,102,0.6);
-    }
-
-    /* Icon style */
     .icon-card img {
       width: 70px;
       animation: float 3s ease-in-out infinite;
-      filter: drop-shadow(0 0 5px rgba(255,204,102,0.6));
     }
-
-    /* Floating animation for icons */
+    .icon-card:hover {
+      transform: translateY(-5px);
+    }
     @keyframes float {
       0%,100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
     }
-
-    /* Explanation (hidden until clicked) */
     .explanation {
       display: none;
       margin-top: 10px;
       font-size: 0.9rem;
-      line-height: 1.3rem;
       color: #ddd;
     }
-
-    /* Show explanation when active */
     .icon-card.active .explanation {
       display: block;
     }
+
+    /* Themed colors per step */
+    #step1 h2, #step1 .icon-card:hover { color: #ffcc66; box-shadow: 0 0 15px rgba(255,204,102,0.6); }
+    #step1 img { filter: drop-shadow(0 0 5px rgba(255,204,102,0.6)); }
+
+    #step2 h2, #step2 .icon-card:hover { color: #ff9966; box-shadow: 0 0 15px rgba(255,153,102,0.6); }
+    #step2 img { filter: drop-shadow(0 0 5px rgba(255,153,102,0.6)); }
+
+    #step3 h2, #step3 .icon-card:hover { color: #66ccff; box-shadow: 0 0 15px rgba(102,204,255,0.6); }
+    #step3 img { filter: drop-shadow(0 0 5px rgba(102,204,255,0.6)); }
+
+    #step4 h2, #step4 .icon-card:hover { color: #ff6699; box-shadow: 0 0 15px rgba(255,102,153,0.6); }
+    #step4 img { filter: drop-shadow(0 0 5px rgba(255,102,153,0.6)); }
   </style>
 </head>
 <body>
 
-  <!-- Motivating Title and Intro -->
-  <h1>How to Break Free from Smoking</h1>
-  <p class="intro">
-    Quitting smoking is challenging, but thousands have succeeded by following these proven steps. 
-    These tips won’t promise overnight success, but they’ll make every day easier and bring you closer to a smoke‑free life.
+  <!-- Navigation -->
+  <nav>
+    <a href="#step1">Step 1</a>
+    <a href="#step2">Step 2</a>
+    <a href="#step3">Step 3</a>
+    <a href="#step4">Step 4</a>
+  </nav>
+
+  <!-- Page Title -->
+  <h1 style="text-align:center; color:#ffcc66; text-shadow:0 0 10px rgba(255,204,102,0.6);">
+    How to Break Free from Smoking
+  </h1>
+  <p class="intro" style="text-align:center;">
+    Quitting smoking is challenging, but thousands have succeeded using these four proven steps.
+    They won’t promise overnight success, but they’ll make every day easier and bring you closer
+    to a smoke‑free life.
   </p>
 
-  <!-- Section Title -->
-  <h2 style="color:#ffcc66; margin-bottom:15px;">Step 1: Make It Invisible</h2>
-
-  <!-- Tips Grid -->
-  <div class="grid">
-    <!-- Tip 1 -->
-    <div class="icon-card" onclick="toggleCard(this)">
-      <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/flame.svg" alt="Lighter">
-      <p><b>Remove Lighters</b></p>
-      <div class="explanation">
-        These objects trigger cravings. Collect every lighter, ashtray, and cigarette pack and throw them away completely, not just hide them.
+  <!-- Step 1 -->
+  <section id="step1">
+    <h2>Step 1: Make It Invisible</h2>
+    <div class="grid">
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/flame.svg" alt="Lighter">
+        <p><b>Remove Lighters</b></p>
+        <div class="explanation">Collect and throw away lighters, ashtrays, and cigarette packs completely. Out of sight, out of mind.</div>
+      </div>
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/ban.svg" alt="No Smoking">
+        <p><b>Avoid Smoking Spots</b></p>
+        <div class="explanation">Change your usual routes and hangouts for 30 days. Avoid places linked to smoking to break the habit loop.</div>
+      </div>
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/users.svg" alt="Friends">
+        <p><b>Ask Friends</b></p>
+        <div class="explanation">Tell your friends you’re quitting and ask them not to smoke near you. Social support helps you stay strong.</div>
       </div>
     </div>
+  </section>
 
-    <!-- Tip 2 -->
-    <div class="icon-card" onclick="toggleCard(this)">
-      <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/ban.svg" alt="No Smoking">
-      <p><b>Avoid Smoking Spots</b></p>
-      <div class="explanation">
-        Change your usual routes and hangouts for 30 days. Avoid balconies, bars, or places linked to smoking to break the habit loop.
+  <!-- Step 2 -->
+  <section id="step2">
+    <h2>Step 2: Make It Unattractive</h2>
+    <div class="grid">
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/lungs.svg" alt="Lungs">
+        <p><b>See the Damage</b></p>
+        <div class="explanation">Look at real lung health videos or images to break the “cool” illusion of smoking.</div>
+      </div>
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/cup.svg" alt="Drink">
+        <p><b>Swap the Habit</b></p>
+        <div class="explanation">Drink water or chew sugar‑free gum whenever cravings hit to replace the ritual.</div>
+      </div>
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/unlink.svg" alt="Break Free">
+        <p><b>Break the Illusion</b></p>
+        <div class="explanation">Smoking doesn’t relax you; it only eases withdrawal, which the last cigarette caused. You’re freeing yourself, not losing anything.</div>
+      </div>
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/heart.svg" alt="Health">
+        <p><b>Reframe Your Mind</b></p>
+        <div class="explanation">Say “I’m choosing health and freedom” instead of “I’m quitting.” It feels empowering, not painful.</div>
       </div>
     </div>
+  </section>
 
-    <!-- Tip 3 -->
-    <div class="icon-card" onclick="toggleCard(this)">
-      <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/users.svg" alt="Friends">
-      <p><b>Ask Friends</b></p>
-      <div class="explanation">
-        Tell your friends you’re quitting. Ask them not to smoke near you or offer cigarettes. Social support makes quitting easier.
+  <!-- Step 3 -->
+  <section id="step3">
+    <h2>Step 3: Make It Difficult</h2>
+    <div class="grid">
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/box.svg" alt="No Cigarettes">
+        <p><b>Don't Carry Cigarettes</b></p>
+        <div class="explanation">Leave your cigarettes and lighters at home. The less convenient it is, the easier to resist.</div>
+      </div>
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/clock.svg" alt="Delay">
+        <p><b>Delay the Craving</b></p>
+        <div class="explanation">Wait 10 minutes when you want to smoke. Most cravings pass if you distract yourself.</div>
+      </div>
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/mug.svg" alt="Routine">
+        <p><b>Change Your Routine</b></p>
+        <div class="explanation">Switch coffee for tea or chew gum after meals to break automatic smoking triggers.</div>
+      </div>
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/lock.svg" alt="Barrier">
+        <p><b>Put Barriers</b></p>
+        <div class="explanation">If you still have cigarettes, store them in a sealed box far away so smoking takes more effort.</div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Step 4 -->
+  <section id="step4">
+    <h2>Step 4: Make It Unsatisfying</h2>
+    <div class="grid">
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/note.svg" alt="Track">
+        <p><b>Track Every Cigarette</b></p>
+        <div class="explanation">Log every cigarette. Seeing the total makes smoking feel less appealing and more controlled.</div>
+      </div>
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/users.svg" alt="Commit">
+        <p><b>Make It Public</b></p>
+        <div class="explanation">Tell friends or family your quitting plan. Accountability makes slipping up less likely.</div>
+      </div>
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/star.svg" alt="Reward">
+        <p><b>Reward Your Wins</b></p>
+        <div class="explanation">Treat yourself for every smoke‑free day. Progress becomes more satisfying than cigarettes.</div>
+      </div>
+      <div class="icon-card" onclick="toggleCard(this)">
+        <img src="https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/outline/cash.svg" alt="Money">
+        <p><b>Visual Money Jar</b></p>
+        <div class="explanation">Each time you buy cigarettes, put the same amount in a jar labeled “Health I Lost.” Watch the cost pile up.</div>
+      </div>
+    </div>
+  </section>
 
   <script>
-    // Show only one explanation at a time
+    // Allow only one card explanation open at a time
     function toggleCard(card) {
       document.querySelectorAll('.icon-card').forEach(c => {
         if (c !== card) c.classList.remove('active');
@@ -138,6 +241,5 @@
       card.classList.toggle('active');
     }
   </script>
-
 </body>
   </html>
